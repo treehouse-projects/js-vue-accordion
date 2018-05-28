@@ -47,14 +47,14 @@ const media = [
       type: 'streaming video',
       contributor: '',
       showDetail: false,
-    }
+    },
   ]
 
 const app = new Vue({
     el: '#media-list',
     data: {
       title: 'Treehouse Public Library',
-      mediaList: media
+      mediaList: media,
     },
     methods: {
       toggleDetails: function(media){
