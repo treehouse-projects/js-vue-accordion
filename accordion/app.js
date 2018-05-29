@@ -48,6 +48,20 @@ const media = [
       contributor: '',
       showDetail: false,
     },
+    {
+      title: 'Title 1', 
+      description: "A slow-burning Breaking Bad prequel.",
+      type: 'e-book',
+      contributor: '',
+      showDetail: false,
+    },
+    {
+      title: 'Title 2', 
+      description: "A slow-burning Breaking Bad prequel.",
+      type: 'e-book',
+      contributor: '',
+      showDetail: false,
+    }
   ]
 
 const app = new Vue({
@@ -65,6 +79,17 @@ const app = new Vue({
       filterList: function(){
         this.type = event.target.value;
         console.log(this.type);
+      }
+    },
+    computed: {
+      uniqueItemsList: function(){
+        const types = [];
+        this.mediaList.forEach((item)=>{
+          if(!types.includes(item.type)){
+            types.push(item.type);
+          }
+        });
+        return types;
       }
     }
   });
